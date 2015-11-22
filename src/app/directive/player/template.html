@@ -1,0 +1,10 @@
+<div class="d-player">
+	<video autoplay="" class="d-player-window" ng-hide="loading"></video>
+	<div class="d-player-window d-player-error" ng-show="error">
+		<div>Video not available</div>
+	</div>
+	<div class="d-player-window d-player-loading" ng-show="loading"></div>
+	<div class="d-player-progress" ng-show="progress">
+		<div ng-style="{width: 100 * progress + '%'}"></div>
+	</div>
+</div>

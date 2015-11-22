@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html
+lang="es"
+ng-app="cnn"
+ng-blur="rss.blur($event)"
+key-up="rss.up()"
+key-down="rss.down()"
+key-enter="rss.play()"
+key-left="rss.goToCurrent()"
+key-right="rss.goToCurrent()">
+    <head>
+        <title ng-bind="rss.feed ? 'Podcasts › ' + rss.feed.title : 'Podcasts'">Podcasts</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="app.css">
+        <script defer src="app.js"></script>
+    </head>
+    <body ng-class="{'is-loaded': rss.feed}">
+
+        <h1 class="l-title">{{ rss.feed.title }}</h1>
+    	<p class="l-description">{{ rss.feed.description | truncate:300 }}</p>
+        
+        <div class="l-content">
+            <ul class="l-entries" in-view-container>
+                <li
+                in-view="$index === rss.index"
+                class="l-entries-item"
+                ng-repeat="entry in rss.feed.entries track by entry.index"
+                ng-class="{'is-hover': $index === rss.index, 'is-current': $index === rss.current.index}">
+                    <h2 class="l-entries-item-title">{{ entry.title }}</h2>
+                    <p class="l-entries-item-date">{{ entry.date | date:'MM/dd/yyyy @ h:mma' }}</p>
+                </li>
+            </ul>
+
+            <div class="l-entry">
+                <div class="l-entry-player">
+                    <player src="rss.current.video" pause="rss.pause"></player>
+                </div>
+                <div class="l-entry-description" ng-bind-html="rss.current.content"></div>
+            </div>
+
+        </div>
+    </body>
+</html>

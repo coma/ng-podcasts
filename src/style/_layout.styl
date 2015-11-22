@@ -1,0 +1,109 @@
+html, body
+	height 100%
+	color $colors['light'];
+	background $colors['dark'];
+	overflow hidden
+
+:focus
+	outline none
+
+body:before
+	content ""
+	display block
+	position fixed
+	top 0
+	right 0
+	bottom 0
+	left 0
+	background: $colors['darker']
+	z-index 1
+
+body:after
+	content ""
+	display block
+	position fixed
+	top 50%
+	left 50%
+	font-size 120px
+	width 1em
+	height 1em
+	margin -0.8em 0 0 -0.2em
+	background: $colors['darker'] url(loading.gif) no-repeat center;
+	background-size cover
+	z-index 1
+
+body.is-loaded:before
+	content none
+
+body.is-loaded:after
+	content none
+
+.l-title
+	font-size 4rem
+	font-weight 500
+	padding 1rem 1rem .4rem 1rem
+	text-shadow 0 2px 1px rgba(0, 0, 0, 0.75)
+	$ellipsis()
+
+.l-description
+	height 5.4rem
+	padding .5rem 1rem 0 1rem
+	font-size 1.5rem
+	line-height 1.8rem
+	color $colors['grey'];
+
+.l-content
+	box-sizing border-box
+	-moz-box-sizing border-box
+	width 100%
+	height calc(100% - 11.3rem)
+	height -moz-calc(100% - 11.3rem)
+	padding 1rem
+	overflow hidden
+
+	& > *
+		float left
+		box-sizing border-box
+		-moz-box-sizing border-box
+
+.l-entries
+	width 55%
+	height 100%
+	padding 0 1rem 0 0
+	overflow hidden
+
+	li + li
+		margin-top 1rem
+
+.l-entries-item
+	position relative
+	padding 1rem
+	background $colors['darker'];
+	border-radius $radius
+	transition all 250ms
+	border-right .5rem solid transparent
+
+	&.is-hover
+		color $colors['white'];
+		background $colors['high'];
+
+		.l-entries-item-date
+			color $colors['darker'];
+
+	&.is-current
+		border-color $colors['white'];
+
+.l-entries-item-title
+	font-size 1.2rem
+	margin-bottom .5rem
+	$ellipsis()
+
+.l-entries-item-date
+	color $colors['grey'];
+
+.l-entry
+	width 45%
+
+.l-entry-description
+	margin 1.5rem 0 0 0
+	line-height 1.2em
