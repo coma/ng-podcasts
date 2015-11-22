@@ -15,9 +15,9 @@ var gulp = require('gulp'),
         localhost   : 'http://localhost:' + npm.config.port
     };
 
-gulp.task('clean', function (done) {
+gulp.task('clean', function () {
 
-    del('dist/!(.gitkeep)', done);
+    return del('dist/!(.gitkeep)');
 });
 
 gulp.task('assets', function () {
