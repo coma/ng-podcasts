@@ -1,3 +1,10 @@
 language: node_js
 node_js:
-  - "4.2"
+- '4.2'
+deploy:
+  provider: heroku
+  api_key:
+    secure: GmowJdO1uqE9czL/rGqVZEWz7JJSOIHqIn5Qf9I86FFx3N+zx9fy5HePtSDZ2tiz9cAS6smxAkhI/p8576GpnoNptlCWjNnoofZotH4ljwVe+XEKgdm9wgQ1ocZ5+IBmaGULb2XQndC/5adQH1H6xAfOvylBcXX0fAnbmXwZfG3x8/+gMylfE4/PbfvFWS832iDSLHKa1OxXenZvhyOdQl4mhHvH0X4S0WPCRH3Khz5o2dMiFJV4vGdhsVqid/acB5qDLe3IUWHbXHtm8hCPevPYVqGUynNX7yvXQGDn83Afsi3FeZTl+3HCgYTiZGHJl7sSMdnnxj9MJ7/1DvYsrcKeSIeuodLIktnUUbF4LyJzDOWuvgQ63BSNRbi3mIum1gYPm7G+5EkZnLGGr7sgihpLKhB5nxloAegHg9yOmORpambyd/W9rleOBsr41r4g9oyfUUCmCWc9V5gH3/dP2CtFLqHXpP9EkpZOUBGjQgkUWCmGrQVi3XcgFUSawGcSQ6RN2qrOmmLZwp9O51RxPq0IREXgHxnbeVKo8GIHjRflWJwZnSAvgSLOxM99DyV+P6l5OrIcgu9rx1OiTd2TcU3svjrhaxS4sLpBUJ58t87yeL2zsKlqTvwiz8OueaZ2Sx8P550Zs/TNXMZ2Azs9GU0EAQxxeY9GYZmrRpO9hGk=
+  app: ngpc
+  on:
+    repo: coma/ng-podcasts
