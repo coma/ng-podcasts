@@ -12,6 +12,9 @@ it might be sleeping the first time to reach it).
 The restriction here was the fact that this is targeted to a Firefox 5 browser,
 so fancy things like flexbox where avoided. In the other hand, I'm using ES6 (ES2015) thanks to [Babel](https://babeljs.io/).
 
+**IMPORTANT:** Firefox 5 does not support almost any video format rather than OGG/OGV out of the box
+and the CNN podcasts are MV4... Try reading another feed using OGG/OGV videos.
+
 Setup
 -----
 
